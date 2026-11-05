@@ -11,7 +11,7 @@ function Navbar() {
           <li>
             <a
                 href="#projects"
-                className="transition hover:text-gray-500 hover:underline"
+                className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition-all transform hover:-translate-y-0.5 shadow-md"
                 >
                 Projects
             </a>
@@ -20,7 +20,7 @@ function Navbar() {
           <li>
             <a 
             href="#about"
-            className="transition hover:text-gray-500 hover:underline">
+            className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition-all transform hover:-translate-y-0.5 shadow-md">
               About
             </a>
           </li>
@@ -28,7 +28,7 @@ function Navbar() {
           <li>
             <a 
             href="#contact"
-            className="transition hover:text-gray-500 hover:underline">
+className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition-all transform hover:-translate-y-0.5 shadow-md">
               Contact
             </a>
           </li>
