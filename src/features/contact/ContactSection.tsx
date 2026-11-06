@@ -28,7 +28,7 @@ function ContactSection() {
           </p>
 
           <p>
-            LinkedIn: linkedin.com/in/ladycatherinear
+            LinkedIn: https://www.linkedin.com/in/catherine-ruiz-330b1b353
           </p>
         </div>
       </div>

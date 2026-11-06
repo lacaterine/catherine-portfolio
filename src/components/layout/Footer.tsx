@@ -8,7 +8,7 @@ function Footer() {
 
         <div className="flex gap-4">
           <a
-            href="https://github.com/your-profile"
+            href="https://github.com/lacaterine"
             target="_blank"
             rel="noopener noreferrer"
             className="transition hover:text-black"
@@ -17,7 +17,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="https://www.linkedin.com/in/catherine-ruiz-330b1b353"
             target="_blank"
             rel="noopener noreferrer"
             className="transition hover:text-black"
