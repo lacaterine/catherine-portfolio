@@ -20,15 +20,15 @@ function ContactSection() {
 
         <div className="space-y-4 text-lg">
           <p>
-            Email: your-email@email.com
+            Email: ladycatherine.ar@gmail.com
           </p>
 
           <p>
-            GitHub: github.com/your-profile
+            GitHub: https://github.com/lacaterine
           </p>
 
           <p>
-            LinkedIn: linkedin.com/in/your-profile
+            LinkedIn: linkedin.com/in/ladycatherinear
           </p>
         </div>
       </div>
