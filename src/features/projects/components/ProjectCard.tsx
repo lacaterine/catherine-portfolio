@@ -8,7 +8,7 @@ function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="transform rounded-2xl border border-gray-200 p-5 md:p-6 transition duration-300 hover:-translate-y-1 hover:border-black">
       <h3 className="mb-3 text-xl md:text-2xl font-semibold">
-        {project.title}
+        <a href={project.link}>{project.title}</a>
       </h3>
 
       <p className="mb-6 text-gray-600">
