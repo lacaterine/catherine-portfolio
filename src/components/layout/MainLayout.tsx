@@ -8,10 +8,10 @@ interface MainLayoutProps {
 
 function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="inline-block bg-slate-800 text-slate-300 text-xs font-medium px-2.5 py-1 rounded-full border border-slate-700 shadow-sm">
+    <div className="min-h-screen w-full bg-slate-800 text-slate-300 flex flex-col">
       <Navbar />
 
-      <main className="flex-grow max-w-6xl w-full mx-auto px-4 py-12 md:py-20">
+      <main className="flex-grow w-full max-w-6xl mx-auto px-4 py-12 md:py-20">
         {children}
       </main>
 

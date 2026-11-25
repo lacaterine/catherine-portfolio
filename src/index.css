@@ -1,5 +1,399 @@
 @import "tailwindcss";
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   HERO — EDITORIAL DESIGN
+======================================== */
+
+.hero-editorial {
+  --reveal-size: 220px;
+  --reveal-top: calc(50% - 110px);
+  --reveal-right: calc(50% - 110px);
+  --reveal-bottom: calc(50% - 110px);
+  --reveal-left: calc(50% - 110px);
+  --cursor-x: 50%;
+  --cursor-y: 50%;
+
+  background: #e9dfd3;
+  color: #89796b;
+}
+
+/* Main background */
+
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 28px 5vw 24px;
+
+  background:
+    radial-gradient(
+      ellipse at 75% 35%,
+      #e7d4bf 0%,
+      transparent 40%
+    ),
+    linear-gradient(
+      125deg,
+      #f5efe7,
+      #e7d9ca 55%,
+      #d9c7b5
+    );
+
+  color: #89796b;
+}
+
+/* Moving light and shadows */
+
+.hero-scene::before,
+.hero-scene::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: -30%;
+}
+
+.hero-scene::before {
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 43%,
+    transparent 58%
+  );
+
+  transform: rotate(-12deg);
+
+  animation: sunlight-drift 14s ease-in-out infinite alternate;
+}
+
+.hero-scene::after {
+  background: radial-gradient(
+    ellipse at 30% 70%,
+    rgba(116, 88, 65, 0.12),
+    transparent 45%
+  );
+
+  animation: shadow-drift 18s ease-in-out infinite alternate;
+}
+
+.hero-scene > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   HEADER AND FOOTER
+======================================== */
+
+.hero-header,
+.hero-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.hero-brand {
+  font-weight: 700;
+}
+
+.hero-edition,
+.hero-footer {
+  opacity: 0.8;
+}
+
+/* ========================================
+   CORNER NAVIGATION
+======================================== */
+
+.hero-navigation {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-nav-item {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  font-weight: 600;
+
+  pointer-events: auto;
+
+  transition:
+    color 250ms ease,
+    letter-spacing 250ms ease;
+}
+
+.hero-nav-item:hover {
+  letter-spacing: 0.2em;
+}
+
+.hero-nav-item span:first-child {
+  font-size: 9px;
+  opacity: 0.65;
+}
+
+.hero-nav-item-1 {
+  top: 17%;
+  left: 5vw;
+}
+
+.hero-nav-item-2 {
+  top: 17%;
+  right: 5vw;
+}
+
+.hero-nav-item-3 {
+  bottom: 17%;
+  left: 5vw;
+}
+
+.hero-nav-item-4 {
+  bottom: 17%;
+  right: 5vw;
+}
+
+/* ========================================
+   CENTRAL TYPOGRAPHY
+======================================== */
+
+.hero-lettering {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 90%;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-eyebrow,
+.hero-role {
+  display: block;
+
+  font-size: 9px;
+  letter-spacing: 0.25em;
+}
+
+.hero-lettering h1 {
+  position: relative;
+  display: inline-block;
+
+  margin: 12px 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 12vw, 10rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.95;
+}
+
+.hero-asterisk {
+  position: absolute;
+  top: -0.25em;
+  right: -0.8em;
+
+  font-family: sans-serif;
+  font-size: 0.23em;
+}
+
+.hero-tagline {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 3vw, 2.3rem);
+}
+
+.hero-tagline em {
+  font-weight: 400;
+}
+
+.hero-role {
+  margin-top: 25px;
+}
+
+/* ========================================
+   REVEAL EFFECT
+======================================== */
+
+.hero-reveal-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  clip-path: inset(
+    var(--reveal-top)
+    var(--reveal-right)
+    var(--reveal-bottom)
+    var(--reveal-left)
+  );
+}
+
+/* Revealed version */
+
+.hero-scene-revealed {
+  color: #49392f;
+}
+
+.hero-scene-revealed::before {
+  opacity: 0.9;
+  animation-duration: 9s;
+}
+
+.hero-scene-revealed::after {
+  background: radial-gradient(
+    ellipse at 30% 70%,
+    rgba(91, 61, 39, 0.2),
+    transparent 45%
+  );
+}
+
+/* Square frame */
+
+.hero-focus-frame {
+  position: absolute;
+  z-index: 4;
+
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+
+  width: var(--reveal-size);
+  height: var(--reveal-size);
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(73, 57, 47, 0.7);
+
+  pointer-events: none;
+}
+
+/* Corner nodes */
+
+.hero-node {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  background: #f5efe7;
+  border: 1px solid #806653;
+}
+
+.hero-node-top-left {
+  top: -4px;
+  left: -4px;
+}
+
+.hero-node-top-right {
+  top: -4px;
+  right: -4px;
+}
+
+.hero-node-bottom-left {
+  bottom: -4px;
+  left: -4px;
+}
+
+.hero-node-bottom-right {
+  bottom: -4px;
+  right: -4px;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes sunlight-drift {
+  from {
+    transform: translateX(-8%) rotate(-12deg);
+  }
+
+  to {
+    transform: translateX(8%) rotate(-12deg);
+  }
+}
+
+@keyframes shadow-drift {
+  from {
+    transform: translate(-4%, 3%);
+  }
+
+  to {
+    transform: translate(5%, -3%);
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .hero-scene {
+    padding: 22px 20px;
+  }
+
+  .hero-navigation {
+    position: static;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    margin: 45px 0;
+  }
+
+  .hero-nav-item {
+    position: static;
+    font-size: 9px;
+  }
+
+  .hero-lettering {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: 100%;
+
+    transform: none;
+    margin: auto 0;
+  }
+
+  .hero-lettering h1 {
+    font-size: clamp(3rem, 14vw, 6rem);
+  }
+
+  .hero-reveal-layer,
+  .hero-focus-frame {
+    display: none;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scene::before,
+  .hero-scene::after {
+    animation: none;
+  }
 }
