@@ -46,35 +46,14 @@ function AboutSection() {
           </div>
         </div>
 
-        {/* Right column — Temporary abstract artwork */}
+        {/* Right column — Photo */}
         <div className="relative mx-auto w-full max-w-md">
-          <div
-            role="img"
-            aria-label="Abstract composition of warm organic shapes and architectural shadows"
-            className="relative aspect-[4/5] overflow-hidden bg-[#e4d5c5]"
-          >
-            {/* Background light */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_25%,#f8f0e6_0%,transparent_45%)]" />
-
-            {/* Organic shape */}
-            <div className="absolute -right-16 top-16 h-72 w-72 rounded-full bg-[#b99f88]/60 blur-[2px]" />
-
-            <div className="absolute -bottom-20 -left-16 h-80 w-80 rounded-full bg-[#a68b75]/50 blur-[3px]" />
-
-            {/* Architectural shadow */}
-            <div className="absolute -left-10 top-0 h-full w-1/2 -skew-x-[18deg] bg-[#6f5847]/10" />
-
-            <div className="absolute right-10 top-10 h-40 w-24 rotate-12 bg-[#f8f0e6]/40 blur-xl" />
-
-            {/* Small editorial label */}
-            <div className="absolute bottom-8 left-8">
-              <p className="text-[10px] uppercase tracking-[0.25em] text-[#49392f]/70">
-                A creative perspective
-              </p>
-              <p className="mt-2 font-serif text-2xl italic text-[#49392f]">
-                Between disciplines.
-              </p>
-            </div>
+          <div className="relative aspect-[4/5] overflow-hidden bg-[#e4d5c5]">
+            <img
+              src="/foto-perfil.jpeg"
+              alt="Portrait of catherine"
+              className="h-full w-full object-cover object-top"
+            />
 
             {/* Decorative border */}
             <div className="absolute inset-5 border border-[#f5efe7]/50" />
